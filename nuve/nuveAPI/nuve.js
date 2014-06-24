@@ -33,6 +33,11 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(function(err, req, res, next){
+    res.send(500, {error: 'Something blew up!hushichao'});
+    console.error(err.stack);
+});
+
 app.get('/test', function (req, res) {
     "use strict";
 

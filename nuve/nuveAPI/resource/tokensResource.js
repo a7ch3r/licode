@@ -149,8 +149,8 @@ exports.create = function (req, res) {
     doInit(req.params.room, function () {
 
         if (currentService === undefined) {
-            console.log('Service not found');
-            res.send('Service not found', 404);
+            console.log('Service not found1');
+            res.send('Service not found1', 404);
             return;
         } else if (currentRoom === undefined) {
             console.log('Room ', req.params.room, ' does not exist');

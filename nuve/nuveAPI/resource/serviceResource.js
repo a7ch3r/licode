@@ -33,7 +33,7 @@ exports.represent = function (req, res) {
             return;
         }
         if (serv === undefined) {
-            res.send('Service not found', 404);
+            res.send('Service not found2', 404);
             return;
         }
         console.log('Representing service ', serv._id);
@@ -54,7 +54,7 @@ exports.deleteService = function (req, res) {
             return;
         }
         if (serv === undefined) {
-            res.send('Service not found', 404);
+            res.send('Service not found3', 404);
             return;
         }
         var id = '';

@@ -5,14 +5,14 @@ var controller = require('./webRtcController');
 var ST = require('./Stream');
 var http = require('http');
 var server = http.createServer();
-var io = require('socket.io').listen(server, {log:false});
+var io = require('socket.io').listen(server, {log:true});
 var config = require('./../../licode_config');
 var logger = require('./logger').logger;
 var Permission = require('./permission');
 
 server.listen(8080);
 
-io.set('log level', 0);
+io.set('log level', 3);
 
 var nuveKey = config.nuve.superserviceKey;
 

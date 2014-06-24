@@ -20,7 +20,7 @@ var getService = exports.getService = function (id, callback) {
     "use strict";
     db.services.findOne({_id: db.ObjectId(id)}, function (err, service) {
         if (service === undefined) {
-            console.log("Service not found");
+            console.log("Service not found11");
         }
         if (callback !== undefined) {
             callback(service);

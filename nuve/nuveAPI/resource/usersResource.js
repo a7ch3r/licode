@@ -30,7 +30,7 @@ exports.getList = function (req, res) {
     doInit(req.params.room, function () {
 
         if (currentService === undefined) {
-            res.send('Service not found', 404);
+            res.send('Service not found4', 404);
             return;
         } else if (currentRoom === undefined) {
             console.log('Room ', req.params.room, ' does not exist');

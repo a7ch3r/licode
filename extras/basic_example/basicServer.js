@@ -38,6 +38,11 @@ app.use(function (req, res, next) {
     }
 });
 
+app.use(function(err, req, res, next){
+    res.send(500, {error: "error on basicServer!" });
+    console.error(err.stack);
+});
+
 N.API.init(config.nuve.superserviceID, config.nuve.superserviceKey, 'http://localhost:3000/');
 
 var myRoom;
@@ -62,6 +67,9 @@ app.post('/createToken/', function (req, res) {
     var room = myRoom,
         username = req.body.username,
         role = req.body.role;
+console.log(req.body.username);
+console.log(req.body.role);
+console.log("hello createToken");
     N.API.createToken(room, username, role, function (token) {
         console.log(token);
         res.send(token);
