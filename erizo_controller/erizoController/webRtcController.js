@@ -180,13 +180,13 @@ exports.WebRtcController = function () {
             logger.info("Adding publisher peer_id ", from);
 
             var muxer = new addon.OneToManyProcessor(),
-                wrtc = new addon.WebRtcConnection(true, true, config.erizo.stunserver, config.erizo.stunport, config.erizo.minport, config.erizo.maxport);
+                wrtc = new addon.WebRtcConnection(true, false, config.erizo.stunserver, config.erizo.stunport, config.erizo.minport, config.erizo.maxport);
 
             publishers[from] = muxer;
             subscribers[from] = [];
 
             wrtc.setAudioReceiver(muxer);
-            wrtc.setVideoReceiver(muxer);
+            //wrtc.setVideoReceiver(muxer);
             muxer.setPublisher(wrtc);
 
             initWebRtcConnection(wrtc, sdp, callback, onReady);
